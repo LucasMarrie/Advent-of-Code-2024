@@ -1,0 +1,118 @@
+x01 AND y01 -> gcq
+y01 XOR x01 -> wnt
+x00 AND y00 -> gct
+wnt AND gct -> dnc
+gcq OR dnc -> qcs
+y02 XOR x02 -> gwm
+qcs XOR gwm -> z02
+
+XOR(OR(AND(x01, y01), AND(XOR(x01, y01) , AND(x00, y00))), XOR(x02, y02))
+
+XOR(OR(AND(("x01"), ("y01")), AND(XOR(("y01"), ("x01")), AND(("x00"), ("y00")))), XOR(("y02"), ("x02")))
+XOR(XOR(("x03"), ("y03")), OR(AND(("y02"), ("x02")), AND(OR(AND(("x01"), ("y01")), AND(XOR(("y01"), ("x01")), AND(("x00"), ("y00")))), XOR(("y02"), ("x02")))))
+XOR(OR(AND(("x03"), ("y03")), AND(XOR(("x03"), ("y03")), OR(AND(("y02"), ("x02")), AND(OR(AND(("x01"), ("y01")), AND(XOR(("y01"), ("x01")), AND(("x00"), ("y00")))), XOR(("y02"), ("x02")))))), XOR(("y04"), ("x04")))
+
+
+
+
+1
+x00 XOR y00 -> z00 
+
+3
+y01 XOR x01 -> wnt
+x00 AND y00 -> gct
+wnt XOR gct -> z01
+
+7
+x01 AND y01 -> gcq
+y01 XOR x01 -> wnt
+x00 AND y00 -> gct
+wnt AND gct -> dnc
+gcq OR dnc -> qcs
+y02 XOR x02 -> gwm
+qcs XOR gwm -> z02
+
+11
+x03 XOR y03 -> ngv
+y02 AND x02 -> vhv
+x01 AND y01 -> gcq
+y01 XOR x01 -> wnt
+x00 AND y00 -> gct
+wnt AND gct -> dnc
+gcq OR dnc -> qcs
+y02 XOR x02 -> gwm
+qcs AND gwm -> vhs
+vhv OR vhs -> ktn
+ngv XOR ktn -> z03
+
+XOR
+  OR
+    AND
+      x01
+      y01
+    AND
+      XOR
+        y01
+        x01
+      AND
+        x00
+        y00
+  XOR
+    y02
+    x02
+------------------------
+XOR
+  XOR
+    x03
+    y03
+  OR
+    AND
+      y02
+      x02
+    AND
+      OR
+        AND
+          x01
+          y01
+        AND
+          XOR
+            y01
+            x01
+          AND
+            x00
+            y00
+      XOR
+        y02
+        x02
+------------------------
+XOR
+  OR
+    AND
+      x03
+      y03
+    AND
+      XOR
+        x03
+        y03
+      OR
+        AND
+          y02
+          x02
+        AND
+          OR
+            AND
+              x01
+              y01
+            AND
+              XOR
+                y01
+                x01
+              AND
+                x00
+                y00
+          XOR
+            y02
+            x02
+  XOR
+    y04
+    x04
