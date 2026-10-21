@@ -3,15 +3,7 @@ use std::{collections::HashMap, fs::read_to_string};
 fn main() {
     let input = read_to_string("input.txt").unwrap();
     let (link_map, value_map) = process_input(&input);
-    part2(&link_map, &value_map);
-    print_gate(&build_gate("z02", &link_map, &value_map), 0);
-    println!("------------------------");
-    print_gate(&build_gate("z03", &link_map, &value_map), 0);
-    println!("------------------------");
-    print_gate(&build_gate("z04", &link_map, &value_map), 0);
-    println!("------------------------");
-
-
+    println!("Part 1: {}", part1(&link_map, &value_map));
 }
 
 fn process_input(input: &str) -> (HashMap<&str, Vec<&str>>, HashMap<&str, bool>){

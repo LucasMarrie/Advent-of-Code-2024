@@ -7,7 +7,7 @@ fn main() {
     let input = read_to_string("input.txt").unwrap();
     let grid = process_input(&input);
     println!("Part 1: {}", part1(&grid));
-    println!("Part 1: {:?}", part2(&input));
+    println!("Part 2: {:?}", part2(&input));
 
 }
 
